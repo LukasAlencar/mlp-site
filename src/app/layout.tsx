@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['400', '500'],
+})
 
 export const metadata: Metadata = {
   title: "MLP",
   description: "Ministério Luz da Palavra",
 };
+
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'],
+  weight: ['400', '500'],
+})
 
 export default function RootLayout({
   children,
