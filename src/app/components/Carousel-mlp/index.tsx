@@ -1,7 +1,7 @@
 'use client'
 import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ReactNode, useState } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { useState } from "react";
 
 type Imgs = {
     id: string;
@@ -16,16 +16,18 @@ export default function CarouselMlp({ imgs }: CarouselMlpProps) {
     const [clicking, setClicking] = useState(false)
 
     return (
-        <Carousel className="w-full max-w-xs">
+        <Carousel className="w-full">
             <CarouselContent>
 
-                {imgs.map((img, index) => {
+                {imgs.reverse().map((img, index) => {
                     return (
                         <CarouselItem onMouseDown={() => { setClicking(true) }} onMouseUp={() => { setClicking(false) }} className={`${clicking ? 'cursor-grabbing' : 'cursor-grab'}`} key={img.id}>
-                            <div className="p-1">
-                                <Card>
-                                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                                        <img src={img.url} alt={'img-'+index} />
+                            <div className="overflow-x-hidden">
+                                <Card className="border-none">
+                                    <CardContent className="flex items-center justify-center p-0 border-none">
+                                        <div className="w-full h-screen overflow-hidden">
+                                            <img className="w-full object-contain" src={img.url} alt={'img-' + index} />
+                                        </div>
                                     </CardContent>
                                 </Card>
                             </div>
@@ -34,8 +36,6 @@ export default function CarouselMlp({ imgs }: CarouselMlpProps) {
                 })}
 
             </CarouselContent>
-            <CarouselPrevious className="text-zinc-900" />
-            <CarouselNext className="text-zinc-900 hover" />
         </Carousel>
     )
 }

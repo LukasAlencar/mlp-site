@@ -23,7 +23,7 @@ export default async function Home() {
   const response = await getPageData();
 
   return (
-    <main className="w-screen h-full">
+    <main className="w-full h-full">
       <CarouselMlp imgs={response.data.page.carouselImages} />
       <OffersAndPrays />
     </main>

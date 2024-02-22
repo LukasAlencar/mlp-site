@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-zinc-900 text-slate-50 flex flex-col w-screen h-screen`}>
+      <body className={`${inter.className} bg-zinc-900 text-slate-50 flex flex-col w-screen h-screen overflow-x-hidden`}>
         <Navbar/>
         <div className="flex-1">
           {children}

@@ -2,8 +2,8 @@ import Image from "next/image"
 
 export const Prays = () => {
     return (
-        <div className="bg-gray-100">
-            <div className=""><Image alt="Orações" width={1080} height={1080} className="max-w-[50%]" src={'/oracoes.jpg'}/></div>
+        <div className="text-zinc-900 p-10">
+            <h1 className="text-2xl">Ofertas</h1>
         </div>
     )
 }
