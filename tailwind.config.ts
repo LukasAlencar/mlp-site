@@ -18,9 +18,11 @@ const config = {
       },
     },
     extend: {
-      
+      textColor: {
+        'title-primary': '#232323',
+        'color-secondary': '#626060'
+      },
       fontFamily: {
-        inter: ["var(--font-inter)", 'sans-serif'],
         montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
       colors: {
